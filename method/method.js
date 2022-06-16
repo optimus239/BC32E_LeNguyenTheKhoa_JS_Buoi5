@@ -1,5 +1,5 @@
 /**
- * Hàm nhận vào id, trả về DOM lấy id
+ * Hàm nhận vào id, trả về DOM id
  * @param {*} id
  * @returns
  */
@@ -35,6 +35,8 @@ function xetKetQua(id1, id2, id3, id4, id5, id6) {
       diemTB += 1;
     } else if (khuVuc === "C") {
       diemTB += 0.5;
+    } else if (khuVuc === "X") {
+      diemTB;
     }
     if (doiTuong === "1") {
       diemTB += 2.5;
@@ -42,6 +44,8 @@ function xetKetQua(id1, id2, id3, id4, id5, id6) {
       diemTB += 1.5;
     } else if (doiTuong === "3") {
       diemTB += 1;
+    } else if (doiTuong === "0") {
+      diemTB;
     }
     if (diemTB >= diemChuan) {
       ketQua = "Bạn đã đậu. Tổng điểm: " + diemTB;
@@ -75,5 +79,8 @@ function tinhTienDien(id1, id2) {
       500 * 50 + 650 * 50 + 850 * 100 + 1100 * 150 + (soKW - 350) * 1300;
   }
   document.getElementById("ketQua2").innerHTML =
-    "Họ tên: " + hoTen + "; Tiền điện: " + tienDien;
+    "Họ tên: " +
+    hoTen +
+    "; Tiền điện: " +
+    new Intl.NumberFormat("vn-VN").format(tienDien);
 }

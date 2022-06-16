@@ -6,6 +6,7 @@
 // -Tạo biến gán với hàm DOM id
 // -DOM id đến value 6 form
 // -Tạo biến diemTB = diemMonThu1+diemMonThu2+diemMonThu3
+// -if(diemMonThu1 = 0 || diemMonThu2 = 0 || diemMonThu3 = 0) =>
 // -if(khuVuc.value = A) => tongDiem+2.5
 // -else if(khuVuc.value = B) => tongDiem+1
 // -else if(khuVuc.value = C) => tongDiem+0.5
@@ -32,7 +33,7 @@ document.getElementById("btnKetQuaTS").onclick = function (event) {
 //--------------Bài 2---------------
 //Đầu vào: hoTen: string - soKW:number
 //Xử lý: -DOM id btnTinhTienDien.onclick gán với hàm xử lý các sự kiên tiếp theo
-// -DOM lấy ai hoTen , soKW
+// -DOM lấy id hoTen , soKW
 // -Tạo biến tienDien = 0
 // -if(soKW <=50)=>tienDien = soKW * 500;
 // -else if(soKW > 50 && soKW <= 100) => tienDien = 500 * 50 + (soKW - 50) * 650;
