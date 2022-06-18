@@ -170,7 +170,7 @@ function tinhTienThue(id1) {
  */
 function ketNoiDoanhNghiep(doanhNghiep) {
   var kiemTra = domID("loaiKhachHang").value;
-  if (kiemTra == "doanhNghiep") {
+  if (kiemTra === "doanhNghiep") {
     document.getElementById("soKetNoi").style.display = "block";
   } else {
     document.getElementById("soKetNoi").style.display = "none";
@@ -194,23 +194,30 @@ function tinhTienCap(id1, id2, id3, id4) {
   var ketQua = 0;
   //progress
   var phiXuLyHD = 0;
-  var phiXuLyCB = 0;
+  var phiDichVuCB = 0;
   var thueKenhCaoCap = 0;
-  if (loaiKhachHang == "nhaDan") {
+  if (loaiKhachHang === "nhaDan") {
     var phiXuLyHD = 4.5;
-    var phiXuLyCB = 20.5;
+    var phiDichVuCB = 20.5;
     var thueKenhCaoCap = 7.5;
-    ketQua = phiXuLyHD + phiXuLyCB + thueKenhCaoCap * soKenhCaoCap;
-  } else if (loaiKhachHang == "doanhNghiep") {
+    ketQua = phiXuLyHD + phiDichVuCB + thueKenhCaoCap * soKenhCaoCap;
+  } else if (loaiKhachHang === "doanhNghiep") {
+    var phiXuLyHD = 15;
+    var phiDichVuCB = 75;
+    var thueKenhCaoCap = 50;
     if (soKetNoi <= 10) {
-      var phiXuLyHD = 15;
-      var phiXuLyCB = 75;
-      var thueKenhCaoCap = 50;
-      ketQua = phiXuLyHD + phiXuLyCB + thueKenhCaoCap * soKenhCaoCap;
+      ketQua = phiXuLyHD + phiDichVuCB + thueKenhCaoCap * soKenhCaoCap;
     } else if (soKetNoi > 10) {
-      ketQua = 140 + (soKetNoi - 10) * 5 + thueKenhCaoCap * soKenhCaoCap;
+      ketQua =
+        phiXuLyHD +
+        phiDichVuCB +
+        (soKetNoi - 10) * 5 +
+        thueKenhCaoCap * soKenhCaoCap;
     }
   }
   document.getElementById("ketQua4").innerHTML =
-    "Mã khách hàng: " + maKhachHang + "; Tiền cáp: $" + ketQua.toFixed(2);
+    "Mã khách hàng: " +
+    maKhachHang +
+    "; Tiền cáp: $" +
+    Intl.NumberFormat("en-US").format(ketQua.toFixed(2));
 }
