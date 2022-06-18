@@ -177,6 +177,7 @@ function ketNoiDoanhNghiep(doanhNghiep) {
   }
 }
 
+//BÀI 5
 /**
  * Hàm tính tiền cáp
  * @param {*} id1 id1 là thẻ input loaiKhachHang
